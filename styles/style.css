@@ -1,0 +1,337 @@
+/*#region general*/
+* {
+    margin: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.centered_obj
+{
+    margin: 0 10vw 0 10vw;
+    align-content: center;
+    align-self: center;
+}
+
+h1, h2, h3, .menu {
+    font-family: 'Century Gothic', Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-areas:
+        "intro"
+        "about"
+        "projects"
+        "resume"
+        "contact"
+    ;
+    background-image: url("../media/backdrop.JPG");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#whitebg {
+    background-color: #f5f5f5;
+}
+
+hr {
+    color: #4fbab9;
+}
+
+main hr {
+    max-width: 80vw;
+    margin: auto;
+    color: dimgrey;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: dimgrey;
+}
+
+a:focus {
+    color: #4fbab9;
+}
+
+a:hover {
+    color: #4fbab9;
+}
+
+a:active {
+    color: #4fccb9;
+}
+/*#endregion*/
+
+/*#region navbar*/
+.menu {
+    list-style: none;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+}
+
+.menu a {
+    display: block;
+    margin: 1rem;
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #4fbab9;
+    transform:scale(1.2);
+    transition: transform 0.1s ease-in, background-color 0.5s linear;
+}
+
+ul.menu ul li {
+    width: auto;
+}
+
+ul.menu ul {
+    display: none;
+}
+
+ul.menu li:hover ul {
+    display: flex;
+}
+
+#intro::before {
+    content: "";
+    clear: both;
+    display: table;
+}
+/*#endregion */
+
+/*#region intro*/
+#intro {
+    grid-area: intro;
+    text-align: center;
+    width: 100%;
+    padding: 0 20% 0 20%;
+    font-size: 6rem;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f5f5f5;
+    font-family: 'Century Gothic', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#name {
+    font-size: 2.5rem;
+    font-style: normal;
+}
+
+#tagline {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+#intro img {
+    width: 20vw;
+}
+/*#endregion*/
+
+/*#region bio*/
+#bio {
+    grid-area: about;
+    margin: 0 10vw 2.5rem 10vw;
+    padding: 5rem 0 0 0;
+}
+
+#bio::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#headshot {
+    float: left;
+    margin: 0 2vmin 2vmin 2vmin;
+    max-width: 15vw;
+}
+
+#headshot img {
+    max-width: 100%;
+}
+/*#endregion*/
+
+/*#region projects*/
+#projects {
+    grid-area: projects;
+    margin: 2.5rem 7vw 2.5rem 7vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/*#endregion*/
+
+/*#region resume*/
+#resume {
+    grid-area: resume;
+    text-align: center;
+    margin: 2.5rem auto 0 auto;
+    max-width: 80vw;
+}
+
+#resume iframe {
+    width: 100%;
+    height: 105vw;
+}
+/*#endregion*/
+
+/*#region contact*/
+#contact {
+    grid-area: contact;
+    text-align: center;
+    font-size: 1rem;
+    margin: 5rem;
+    color: dimgrey;
+}
+
+#contact h2 {
+    font-size: 2rem;
+}
+
+#contact i {
+    color: dimgrey;
+}
+
+#contact i:hover {
+    color: #4fbab9;
+    transform:scale(1.2);
+    transition: transform 0.1s ease-in, background-color 0.5s linear;
+}
+/*#endregion*/
+
+/*#region topButton*/
+#toTop {
+    position: fixed;
+    z-index: 99;
+    bottom: 3vw;
+    right: 3vw;
+    max-width: 20vw;
+    font-size: 2rem;
+}
+
+#toTop a {
+    color: black;
+    display: block;
+    text-decoration: none;
+}
+
+#toTop a:hover {
+    color: #4fbab9;
+    transform: scale(1.2);
+    transition: transform 0.1s ease-in, background-color 0.5s linear;
+}
+
+header {
+    height: 100vh;
+}
+
+/*#endregion */
+
+@media only screen and (max-width: 768px) {
+    #wrapper {
+        background-position: -100px 0px;
+    }
+
+    #name {
+        font-size: 2rem;
+        font-style: normal;
+    }
+    
+    #tagline {
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+    #intro img {
+        width: 30vw;
+    }
+
+    #intro {
+        padding: 10%;
+    }
+
+    #projects {
+        grid-area: projects;
+        margin: 0 10vw 5rem 10vw;
+        display: grid;
+        grid-template-columns: 80vw;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+        "head"
+        "projone"
+        "projtwo"
+        "projthree"
+        "projfour";
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0 auto 0 auto;
+        display: flex;
+        text-align: center;
+    }
+
+    .menu li {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    main p {
+        font-size: .8rem;
+    }
+
+    #toTop h1 {
+        font-size: 2rem;
+    }
+
+    #contact h2 {
+        font-size: 1.5rem;
+    }
+
+    #contact p {
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+
+    #projects > * {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    #projects > * {
+        max-width: 33%;
+    }
+}
