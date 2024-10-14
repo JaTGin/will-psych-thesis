@@ -41,7 +41,7 @@ class TaskEmbedComponent extends HTMLElement {
             // Create flash embed
             if (macosPlatforms.test(userAgent))
             {
-                taskPath = `../media/flash/__MACOSX/Study2/ATCTask/${taskName}.swf`
+                taskPath = `media/flash/__MACOSX/Study2/ATCTask/${taskName}.swf`
             }
             else
             {
