@@ -52,7 +52,7 @@ class TaskEmbedComponent extends HTMLElement {
                     const player = ruffle.createPlayer();
                     const container = this.shadowRoot.getElementById("container");
                     container.appendChild(player);
-                    player.load(taskPath).then(() => {
+                    player.load("../media/flash/Study2/ATCtask/CircleTask_easy_10minutes.swf").then(() => {
                         console.info("Ruffle successfully loaded the file");
                     }).catch((e) => {
                         console.error(`Ruffle failed to load the file: ${e}`);
