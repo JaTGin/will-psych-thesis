@@ -41,11 +41,11 @@ class TaskEmbedComponent extends HTMLElement {
             // Create flash embed
             if (macosPlatforms.test(userAgent))
             {
-                taskPath = `../media/${taskName}.swf`
+                taskPath = `../osxMedia/${taskName}.swf`
             }
             else
             {
-                taskPath = `../media/${taskName}.swf`
+                taskPath = `../osxMedia/${taskName}.swf`
                 window.RufflePlayer = window.RufflePlayer || {};
                 window.addEventListener("load", (event) => {
                     const ruffle = window.RufflePlayer.newest();
