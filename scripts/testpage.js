@@ -39,26 +39,19 @@ class TaskEmbedComponent extends HTMLElement {
             os = null;
 
             // Create flash embed
-            if (macosPlatforms.test(userAgent))
-            {
-                taskPath = `../osxMedia/${taskName}.swf`
-            }
-            else
-            {
-                taskPath = `../osxMedia/${taskName}.swf`
-                window.RufflePlayer = window.RufflePlayer || {};
-                window.addEventListener("load", (event) => {
-                    const ruffle = window.RufflePlayer.newest();
-                    const player = ruffle.createPlayer();
-                    const container = this.shadowRoot.getElementById("container");
-                    container.appendChild(player);
-                    player.load(taskPath).then(() => {
-                        console.info("Ruffle successfully loaded the file");
-                    }).catch((e) => {
-                        console.error(`Ruffle failed to load the file: ${e}`);
-                    });
+            taskPath = `../winMedia/${taskName}.swf`;
+            window.RufflePlayer = window.RufflePlayer || {};
+            window.addEventListener("load", (event) => {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+                const container = this.shadowRoot.getElementById("container");
+                container.appendChild(player);
+                player.load(taskPath).then(() => {
+                    console.info("Ruffle successfully loaded the file");
+                }).catch((e) => {
+                    console.error(`Ruffle failed to load the file: ${e}`);
                 });
-            }
+            });
         }
     }
 }
