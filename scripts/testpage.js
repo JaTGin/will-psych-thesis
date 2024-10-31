@@ -14,9 +14,6 @@ class TaskEmbedComponent extends HTMLElement {
         this.render();
     }
 
-    disconnectedCallback() {
-    }
-
     render() {
         // attempt to get metadata tag
         const taskName = this.getAttribute('task-name') ? this.getAttribute('task-name') : null;
